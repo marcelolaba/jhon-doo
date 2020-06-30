@@ -186,8 +186,9 @@ Navbar
   background-color: var(--clr-primary-10);
 }
 .navbar-center {
+  max-width: 1170px;
+  margin: 0 auto;
   height: 5rem;
-  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -213,6 +214,7 @@ Navbar
     grid-template-columns: auto 1fr;
   }
   .nav {
+    padding: 1rem;
     justify-self: end;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -366,12 +368,12 @@ Hero
     object-fit: cover;
     border-radius: var(--radius);
     position: relative;
-    /* whyyyyyyyyyyyyyyyyyyyy? 
+    /* whyyyyyyyyyyyyyyyyyyyy?
     el contenido de before, debería
     estar abajo de la foto, pero
     no lo está porque la foto está
     en fljo, y el before no. Al
-    ponerla relative, tambien la 
+    ponerla relative, tambien la
     saca de flujo y el before sale
     "before" de la foto*/
   }
@@ -409,7 +411,7 @@ About
 }
 
 @media screen and (min-width: 974px) {
-  .section-center {
+  .about-center {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -660,23 +662,269 @@ Connect
 Skills
 ===============
 */
+.skills {
+  background: var(--clr-primary-9);
+}
+.skills h2 {
+  text-align: center;
+}
+.skills-center {
+  padding-top: 3.5rem;
+  /*cell min-width:330px */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  column-gap: 2rem;
+}
+.skill h3 {
+  color: var(--clr-primary-1);
+  margin-bottom: 1.5rem;
+}
+.languague p {
+  color: var(--clr-primary-1);
+  margin-bottom: 0.5rem;
+}
+.barra {
+  position: relative;
+  background: var(--clr-white);
+  height: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius);
+}
+.barra::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+}
+.barra::before {
+  content: "50%";
+  position: absolute;
+  left: 50%;
+  top: -200%;
+  transform: translateX(-50%);
+  border-radius: var(--radius);
+  color: var(--clr-primary-1);
+}
+.js .barra::after {
+  width: 70%;
+}
+.js .barra::before {
+  content: "70%";
+  left: 70%;
+}
+.react .barra::after {
+  width: 80%;
+}
+.react .barra::before {
+  content: "80%";
+  left: 80%;
+}
+.php .barra::after {
+  width: 70%;
+}
+.php .barra::before {
+  content: "70%";
+  left: 70%;
+}
+.python .barra::after {
+  width: 80%;
+}
+.python .barra::before {
+  content: "80%";
+  left: 80%;
+}
 /*
 ===============
 Timeline
 ===============
 */
+.timeline {
+  text-align: center;
+  padding-top: 4rem;
+}
+.timeline-center {
+  margin-top: 4rem;
+  width: 80vw;
+  max-width: 608px;
+  margin: 0 auto;
+}
+.anio {
+  padding: 3rem;
+  text-align: left;
+  position: relative;
+}
+.anio::after {
+  content: "1";
+  display: block;
+  position: absolute;
+  left: 100%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  height: 2rem;
+  width: 2rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-primary-5);
+  border-radius: 50%;
+  font-weight: bold;
+}
+.a2020 {
+  border-right: 2px var(--clr-primary-5) dashed;
+  border-bottom-right-radius: 2rem;
+}
+.a2019,
+.a2017 {
+  border-top: 2px var(--clr-primary-5) dashed;
+  border-left: 2px var(--clr-primary-5) dashed;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  margin-right: 2rem;
+  padding-right: 0;
+}
+.a2018,
+.a2016 {
+  border-top: 2px var(--clr-primary-5) dashed;
+  border-right: 2px var(--clr-primary-5) dashed;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  margin-left: 2rem;
+  padding-left: 0;
+}
+.a2015 {
+  border-top: 2px var(--clr-primary-5) dashed;
+  border-left: 2px var(--clr-primary-5) dashed;
+  border-top-left-radius: 2rem;
+  margin-right: 2rem;
+}
 
+.a2019::after {
+  content: "2";
+  left: 0;
+}
+.a2018::after {
+  content: "3";
+}
+.a2017::after {
+  content: "4";
+  left: 0;
+}
+.a2016::after {
+  content: "5";
+}
+.a2015::after {
+  content: "6";
+  left: 0;
+}
 /*
 ===============
 Blog
 ===============
 */
+.blog {
+  background-color: var(--clr-grey-10);
+  text-align: center;
+}
+.blog-center {
+  padding-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 3rem 1rem;
+}
+.blog-card {
+  height: 27rem;
+  position: relative;
+  perspective: 1500px;
+}
+.card-side {
+  backface-visibility: hidden;
+  transition: all 2s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius);
+}
+.card-back {
+  background: var(--clr-primary-10);
+  transform: rotatey(180deg);
+  display: grid;
+  place-items: center;
+}
+.blog-card:hover .card-front {
+  transform: rotatey(-180deg);
+}
+.blog-card:hover .card-back {
+  transform: rotatey(0);
+}
+
+.card-picture img {
+  height: 13rem;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.blog-info {
+  padding: 1rem 1.5rem;
+  background-color: var(--clr-white);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+.blog-info h4,
+p {
+  text-align: left;
+}
+.card-footer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.card-footer img {
+  height: 2rem;
+  width: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.card-footer p {
+  color: var(--clr-primary-5);
+  justify-self: right;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
 
 /*
 ===============
 Footer
 ===============
 */
+.footer {
+  background-color: rgb(29, 29, 29);
+  padding-top: 3rem;
+}
+.footer-social {
+  max-width: 20rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+.footer-icon {
+  color: var(--clr-primary-5);
+  font-size: 1.5rem;
+}
+.footer-center p {
+  margin-bottom: 0;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
 /*
 ===============
 Single Page
