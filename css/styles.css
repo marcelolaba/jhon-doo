@@ -850,12 +850,7 @@ Blog
   width: 100%;
   border-radius: var(--radius);
 }
-.card-back {
-  background: var(--clr-primary-10);
-  transform: rotatey(180deg);
-  display: grid;
-  place-items: center;
-}
+
 .blog-card:hover .card-front {
   transform: rotatey(-180deg);
 }
@@ -897,6 +892,12 @@ p {
   margin-bottom: 0;
   font-size: 0.85rem;
 }
+.card-back {
+  background: var(--clr-primary-10);
+  transform: rotatey(180deg);
+  display: grid;
+  place-items: center;
+}
 
 /*
 ===============
@@ -906,13 +907,16 @@ Footer
 .footer {
   background-color: rgb(29, 29, 29);
   padding-top: 3rem;
+  display: grid;
+  place-items: center;
 }
 .footer-social {
-  width: 20rem;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+  width: 80vw;
+  max-width: 23rem;
+  margin: 0 auto;
 }
 .footer-icon {
   color: var(--clr-primary-5);
