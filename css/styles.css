@@ -190,7 +190,7 @@ Navbar
   margin: 0 auto;
   height: 5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
   background: var(--clr-white);
   transition: var(--transition);
@@ -203,6 +203,7 @@ Navbar
 .nav-btn {
   /* align-self: center; */
   justify-self: end;
+  padding-right: 1rem;
   font-size: 2rem;
   color: var(--clr-primary-5);
   cursor: pointer;
@@ -907,7 +908,7 @@ Footer
   padding-top: 3rem;
 }
 .footer-social {
-  max-width: 20rem;
+  width: 20rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
