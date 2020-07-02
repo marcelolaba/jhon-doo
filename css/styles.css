@@ -963,3 +963,23 @@ Single Page
 Products Page
 ===============
 */
+
+.top-button {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 100px;
+  display: none;
+  background: none;
+  border: 1px var(--clr-primary-5) solid;
+  border-radius: var(--radius);
+}
+.top-button-icon {
+  font-size: 2rem;
+  color: var(--clr-primary-5);
+  padding: 0.5rem;
+}
+
+.show-button {
+  display: block;
+}
