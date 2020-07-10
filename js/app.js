@@ -40,7 +40,7 @@ scrollLinks.forEach((link) => {
     e.preventDefault();
     links.classList.remove("show-links");
 
-    const id = e.target.getAttribute("href").slice(1);
+    const id = link.getAttribute("href").slice(1);
     const element = document.getElementById(id);
     //
     let position = element.offsetTop - 62;
