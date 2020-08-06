@@ -912,7 +912,7 @@ p {
   justify-self: right;
   text-transform: uppercase;
   margin-bottom: 0;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 .card-back {
   background: var(--clr-primary-10);
